@@ -1,0 +1,453 @@
+@charset "UTF-8";
+/*==========================================================================
+mixins
+========================================================================== */
+/*==========================================================================
+colors
+========================================================================== */
+/*==========================================================================
+common 共通
+========================================================================== */
+body {
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+}
+
+img {
+  width: 100%;
+}
+
+.inner {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 75px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+@media screen and (max-width: 767px) {
+  .inner {
+    padding: 0 20px;
+  }
+}
+
+/*ボタン2個以上
+//////////////////////////////////
+/////////*/
+.btn {
+  display: block;
+  width: 24vw;
+  max-width: 280px;
+  height: 80px;
+  border-radius: 15px;
+  color: #fff;
+  text-align: center;
+  font-size: 2vw;
+  font-weight: bold;
+  line-height: 80px;
+  -webkit-box-shadow: 1px 1px 2px #333;
+          box-shadow: 1px 1px 2px #333;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: relative;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 767px) {
+  .btn {
+    margin: 0 auto;
+    width: 250px;
+    font-size: 20px;
+    height: 70px;
+    line-height: 70px;
+  }
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 36%;
+  right: 7px;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 0 10px;
+  border-left: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+/*ボタン1個
+////////////////////////////////////
+
+.btn {
+  display: block;
+  width: 350px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 15px;
+  color: $white;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  box-shadow: 1px 1px 2px #333;
+  transition: all 0.3s ease 0s;
+  position: relative;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include mq('sp') {
+    margin: 0 auto;
+    width: 250px;
+    font-size: 20px;
+    height: 70px;
+    line-height: 70px;
+  }
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 37%;
+  right: 10px;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  margin: 0 10px;
+  border-left: 4px solid $white;
+  border-bottom: 4px solid $white;
+  transform: rotate(-135deg);
+}
+///////////////*/
+@media screen and (max-width: 767px) {
+  .btn-wrap:not(:first-child) {
+    margin-top: 15px;
+  }
+}
+
+/*top
+/////////////////////////////////////*/
+.top-img {
+  width: 100%;
+}
+
+/*text-area
+/////////////////////////////////////*/
+.text {
+  font-family: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", serif;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #333;
+  margin: 50px 0 40px;
+  /*///背景色
+  background: radial-gradient($blue 1%, transparent 70%);
+  ///*/
+}
+
+@media screen and (max-width: 767px) {
+  .text {
+    margin: 20px 0;
+    font-size: 20px;
+  }
+}
+
+.text-blue {
+  color: #1244F5;
+}
+
+.text-orange {
+  color: #FFA500;
+}
+
+.text-red {
+  color: #FF0000;
+}
+
+.btn-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /*///ボタンの数で切り替え
+  justify-content: space-evenly;
+  ///*/
+}
+
+@media screen and (max-width: 767px) {
+  .btn-area {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.btn-amazon {
+  background: -webkit-gradient(linear, left top, left bottom, from(#CDC9CA), color-stop(70%, #232F3E), to(#232F3E));
+  background: linear-gradient(to bottom, #CDC9CA, #232F3E 70%, #232F3E);
+}
+
+.btn-rakuten {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EBC2BF), color-stop(70%, #FF0000), to(#FF0000));
+  background: linear-gradient(to bottom, #EBC2BF, #FF0000 70%, #FF0000);
+}
+
+.btn-yahoo {
+  background: -webkit-gradient(linear, left top, left bottom, from(#F5CEB8), color-stop(70%, #F46300), to(#F46300));
+  background: linear-gradient(to bottom, #F5CEB8, #F46300 70%, #F46300);
+}
+
+.btn-line {
+  background: -webkit-gradient(linear, left top, left bottom, from(#BCD8B2), color-stop(70%, #02B404), to(#02B404));
+  background: linear-gradient(to bottom, #BCD8B2, #02B404 70%, #02B404);
+}
+
+.btn-mail {
+  background: -webkit-gradient(linear, left top, left bottom, from(#F2C8C2), color-stop(70%, #E34133), to(#E34133));
+  background: linear-gradient(to bottom, #F2C8C2, #E34133 70%, #E34133);
+}
+
+/*contents-img-area1
+/////////////////////////////////////*/
+.contents-img-area1 {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .contents-img-area1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/*price-area
+/////////////////////////////////////*/
+.price-area {
+  text-align: center;
+}
+
+.price-img {
+  width: 300px;
+}
+
+@media screen and (max-width: 767px) {
+  .price-img {
+    width: 200px;
+  }
+}
+
+.price-text-wrap {
+  width: 600px;
+  margin: 25px auto 50px;
+  padding: 20px 0;
+  border: 3px solid #333;
+  border-radius: 15px;
+  -webkit-box-shadow: 3px 5px 4px #333;
+          box-shadow: 3px 5px 4px #333;
+}
+
+@media screen and (max-width: 767px) {
+  .price-text-wrap {
+    border: none;
+    width: auto;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 0;
+    margin: 15px auto 20px;
+  }
+}
+
+.price-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.content-size {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 100px;
+  line-height: 1.2em;
+  font-weight: bold;
+  color: #FF0000;
+  text-shadow: 2px 2px 0 YELLOW, 3px 3px 0 rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 767px) {
+  .price {
+    font-size: 70px;
+    line-height: 1.1em;
+  }
+}
+
+.price-sub-text {
+  font-size: 14px;
+  padding: 20px 0 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .price-sub-text {
+    padding: 10px 0 0;
+  }
+}
+
+/*contents-img-area2
+/////////////////////////////////////*/
+.contents-img-area2 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 767px) {
+  .contents-img-area2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/*privacy-policy
+/////////////////////////////////////*/
+.privacy-policy-wrap {
+  margin-top: 60px;
+  margin-bottom: 50px;
+  padding: 0;
+  width: 600px;
+  height: 430px;
+  overflow: auto;
+  border: 1px solid #333;
+}
+
+@media screen and (max-width: 767px) {
+  .privacy-policy-wrap {
+    width: 300px;
+    height: 115px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.privacy-policy {
+  background: #fff;
+  padding: 25px 30px;
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: .1em;
+}
+
+@media screen and (max-width: 767px) {
+  .privacy-policy {
+    font-size: 12px;
+  }
+}
+
+.privacy-policy-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .privacy-policy-title {
+    font-size: 14px;
+  }
+}
+
+.privacy-policy-bold {
+  font-weight: bold;
+  line-height: 2.5em;
+}
+
+.privacy-policy-address {
+  text-align: right;
+  background: #fff;
+  padding: 0 30px 25px 30px;
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: .1em;
+}
+
+@media screen and (max-width: 767px) {
+  .privacy-policy-address {
+    font-size: 12px;
+  }
+}
+
+/*footer
+/////////////////////////////////////*/
+footer {
+  height: 60px;
+  background-color: #c4c4c4;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  footer {
+    height: 30px;
+  }
+}
+
+.footer-link {
+  font-size: 16px;
+  color: #000;
+  line-height: 60px;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-link {
+    font-size: 14px;
+    line-height: 30px;
+  }
+}
+
+/*==========================================================================
+# reset - ブラウザの差異や不要なスタイルを無くすためのスタイル
+========================================================================== */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, div, span, img, a, table, tr, th, td, small, button, time, figure {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+li, dd {
+  list-style-type: none;
+}
+
+header, footer, nav, section, article, aside, figure, figcaption {
+  display: block;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

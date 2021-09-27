@@ -1,0 +1,446 @@
+@charset "UTF-8";
+
+/*==========================================================================
+mixins
+========================================================================== */
+$breakpoints: (
+  'sp': 'screen and (max-width: 767px)', 
+  'pc': 'screen and (min-width: 768px))'
+) !default;
+
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+}
+
+
+/*==========================================================================
+colors
+========================================================================== */
+
+$white: #fff;
+$black: #333;
+$blue: #1244F5;
+$red: #FF0000;
+$orange: #FFA500;
+
+
+/*==========================================================================
+common 共通
+========================================================================== */
+
+body {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+}
+
+
+img {
+  width: 100%;
+}
+
+.inner {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 75px;
+  box-sizing: content-box;
+
+  @include mq('sp') {
+   padding: 0 20px; 
+  }
+}
+
+/*ボタン2個以上
+//////////////////////////////////
+/////////*/
+.btn {
+  display: block;
+  width: 24vw;
+  max-width: 280px;
+  height: 80px;
+  border-radius: 15px;
+  color: $white;
+  text-align: center;
+  font-size: 2vw;
+  font-weight: bold;
+  line-height: 80px;
+  box-shadow: 1px 1px 2px #333;
+  transition: all 0.3s ease 0s;
+  position: relative;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include mq('sp') {
+    margin: 0 auto;
+    width: 250px;
+    font-size: 20px;
+    height: 70px;
+    line-height: 70px;
+  }
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 36%;
+  right: 7px;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 0 10px;
+  border-left: 4px solid $white;
+  border-bottom: 4px solid $white;
+  transform: rotate(-135deg);
+}
+
+
+/*ボタン1個
+////////////////////////////////////
+
+.btn {
+  display: block;
+  width: 350px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 15px;
+  color: $white;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  box-shadow: 1px 1px 2px #333;
+  transition: all 0.3s ease 0s;
+  position: relative;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include mq('sp') {
+    margin: 0 auto;
+    width: 250px;
+    font-size: 20px;
+    height: 70px;
+    line-height: 70px;
+  }
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 37%;
+  right: 10px;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  margin: 0 10px;
+  border-left: 4px solid $white;
+  border-bottom: 4px solid $white;
+  transform: rotate(-135deg);
+}
+///////////////*/
+
+
+.btn-wrap {
+  @include mq('sp') {
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+}
+
+
+
+/*top
+/////////////////////////////////////*/
+
+.top-img {
+  width: 100%;
+}
+
+
+/*text-area
+/////////////////////////////////////*/
+
+.text {
+  font-family: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", serif;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: $black;
+  margin: 50px 0 40px;
+
+  /*///背景色
+  background: radial-gradient($blue 1%, transparent 70%);
+  ///*/
+
+  @include mq('sp') {
+    margin: 20px 0;
+    font-size: 20px;
+  }
+}
+
+.text-blue {
+  color: $blue;
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.text-red {
+  color: $red;
+}
+
+.btn-area {
+  display: flex;
+  justify-content: space-between;
+  
+  
+  /*///ボタンの数で切り替え
+  justify-content: space-evenly;
+  ///*/
+
+  @include mq('sp') {
+    flex-direction: column;
+  }
+}
+
+.btn-amazon {
+  background: linear-gradient(to bottom, #CDC9CA, #232F3E  70%, #232F3E); 
+}
+
+.btn-rakuten {
+  background: linear-gradient(to bottom, #EBC2BF, $red  70%, $red); 
+}
+
+.btn-yahoo {
+  background: linear-gradient(to bottom, #F5CEB8, #F46300  70%, #F46300); 
+}
+
+.btn-line {
+  background: linear-gradient(to bottom, #BCD8B2, #02B404  70%, #02B404);
+}
+
+.btn-mail {
+  background: linear-gradient(to bottom, #F2C8C2, #E34133  70%, #E34133);
+}
+
+/*contents-img-area1
+/////////////////////////////////////*/
+
+.contents-img-area1 {
+  margin-top: 50px;
+  margin-bottom: 40px;
+
+  @include mq('sp') {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/*price-area
+/////////////////////////////////////*/
+
+.price-area {
+  text-align: center;
+}
+
+.price-img {
+ width: 300px;
+
+ @include mq('sp') {
+   width: 200px;
+ }
+}
+
+.price-text-wrap {
+  width: 600px;
+  margin: 25px auto 50px;
+  padding: 20px 0;
+  border: 3px solid #333;
+  border-radius: 15px;
+  box-shadow: 3px 5px 4px #333;
+
+  @include mq('sp') {
+    border: none;
+    width: auto;
+    box-shadow: none;
+    padding: 0;
+    margin: 15px auto 20px;
+  }
+}
+
+.price-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.content-size {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 100px;
+  line-height: 1.2em;
+  font-weight: bold;
+  color: #FF0000;
+  text-shadow: 2px 2px 0 YELLOW,
+    3px 3px 0 rgba(0, 0, 0, 0.7);
+
+    @include mq('sp') {
+      font-size: 70px;
+      line-height: 1.1em;
+    }
+}
+
+.price-sub-text {
+  font-size: 14px;
+  padding: 20px 0 15px;
+
+  @include mq('sp') {
+    padding: 10px 0 0;
+  }
+}
+
+
+/*contents-img-area2
+/////////////////////////////////////*/
+
+.contents-img-area2 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  @include mq('sp') {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/*privacy-policy
+/////////////////////////////////////*/
+
+.privacy-policy-wrap {
+  margin-top: 60px;
+  margin-bottom: 50px;
+  padding: 0;
+  width: 600px;
+  height: 430px;
+  overflow: auto;
+  border: 1px solid #333;
+
+  @include mq('sp') {
+    width: 300px;
+    height: 115px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.privacy-policy {
+  background: $white;
+  padding: 25px 30px;
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: .1em;
+
+  @include mq('sp') {
+    font-size: 12px;
+  }
+}
+
+.privacy-policy-title {
+  font-size: 20px;
+  font-weight: bold;
+
+  @include mq('sp') {
+    font-size: 14px;
+  }
+}
+
+.privacy-policy-bold {
+  font-weight: bold;
+  line-height: 2.5em;
+}
+
+.privacy-policy-address {
+  text-align: right;
+  background: $white;
+  padding: 0 30px 25px 30px;
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: .1em;
+
+  @include mq('sp') {
+    font-size: 12px;
+  }
+}
+
+/*footer
+/////////////////////////////////////*/
+
+footer {
+ height: 60px;
+ background-color: #c4c4c4;
+ text-align: center;
+
+ @include mq('sp') {
+   height: 30px;
+ }
+}
+
+.footer-link {
+  font-size: 16px;
+  color: #000;
+  line-height: 60px;
+  
+  @include mq('sp') {
+    font-size: 14px;
+    line-height: 30px;
+  }
+}
+
+
+/*==========================================================================
+# reset - ブラウザの差異や不要なスタイルを無くすためのスタイル
+========================================================================== */
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, div, span, img, a, table, tr, th, td, small, button, time, figure {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    line-height: 1;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  li, dd {
+    list-style-type: none;
+  }
+  
+  header, footer, nav, section, article, aside, figure, figcaption {
+    display: block;
+  }
+  
+  img {
+    border: none;
+    vertical-align: bottom;
+  }
+  
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
