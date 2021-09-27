@@ -8,9 +8,22 @@ colors
 /*==========================================================================
 common 共通
 ========================================================================== */
+@media screen and (max-width: 767px) {
+  .is-pc {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .is-sp {
+    display: none;
+  }
+}
+
 body {
   background-image: url(../img/background.jpg);
   background-size: cover;
+  font-family: "MS Pゴシック",sans-serif;
 }
 
 img {
@@ -144,7 +157,7 @@ img {
   text-align: center;
   font-size: 36px;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1.7;
   color: #333;
   margin: 50px 0 40px;
   /*///背景色
@@ -278,9 +291,15 @@ img {
   font-weight: bold;
 }
 
+@media screen and (max-width: 767px) {
+  .content-size {
+    font-size: 30px;
+  }
+}
+
 .price {
   font-size: 100px;
-  line-height: 1.2em;
+  line-height: 1.15em;
   font-weight: bold;
   color: #FF0000;
   text-shadow: 2px 2px 0 YELLOW, 3px 3px 0 rgba(0, 0, 0, 0.7);
@@ -288,8 +307,8 @@ img {
 
 @media screen and (max-width: 767px) {
   .price {
-    font-size: 70px;
-    line-height: 1.1em;
+    font-size: 40px;
+    line-height: 1.4em;
   }
 }
 
