@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "User"
-AuthUserFile ""
+AuthUserFile "https://rain-drops02.github.io/CPRO_LP/.htaccess"
 require valid-user
